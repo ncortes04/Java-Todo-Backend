@@ -1,5 +1,7 @@
 package com.example.jwt.api.model;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,7 +15,9 @@ public class GroupTodo {
     private String id;
 
     private String groupname; // Corrected field name
+    @DBRef
+    private List<Todo> todos;
 
-    @DBRef //reference a User
+    @DBRef // reference a User
     private User user; // Reference to the User who created the group
 }
