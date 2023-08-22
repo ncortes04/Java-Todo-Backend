@@ -2,6 +2,7 @@ package com.example.jwt.api.controller.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/user")
+@CrossOrigin(origins = { "http://localhost:4200" }, allowedHeaders = "*")
 public class UserController {
 
     private final UserService userService;
